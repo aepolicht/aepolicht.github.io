@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>About - aepolicht</title>
+        <title>Extra - aepolicht</title>
       
       
       
@@ -87,9 +87,13 @@
         
           <span class="path">
             
+              
+                extra_javascript <i class="icon icon-link"></i>
+              
+            
           </span>
         
-        About
+        Extra
       </div>
     </div>
     
@@ -167,15 +171,31 @@
           
             
   <li>
-    <a class="current" title="About" href="./">
+    <a class="" title="About" href="../about/">
       About
     </a>
     
+  </li>
+
+          
+            
+  <li>
+    <span class="section">extra_javascript</span>
+    <ul>
       
         
+  <li>
+    <a class="current" title="Extra" href="./">
+      Extra
+    </a>
+    
       
       
     
+  </li>
+
+      
+    </ul>
   </li>
 
           
@@ -189,7 +209,20 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="about">About</h1>
+            <h1>Extra</h1>
+          
+          <p>$(document).ready(function(){
+    var git = 'http://github.com/aepolicht'
+    var t1 = window.location.pathname
+    var url = null
+    if (t1=='/'){
+        url = git + '/index.md'
+    }else{
+        url = git+t1.substr(0, t1.length-1)+'.md'
+    } <br />
+    a_git = $('[href="https://github.com/aepolicht"]')
+    a_git.attr('href', url).attr('target', '_blank')
+})</p>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -206,7 +239,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../mobonet/" title="MoboNet">
+        <a href="../about/" title="About">
           <span class="direction">
             Previous
           </span>
@@ -216,7 +249,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                MoboNet
+                About
               </div>
             </div>
           </div>
