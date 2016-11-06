@@ -1,6 +1,12 @@
-site_name: My Docs
+site_name: aepolicht
 
 theme: 'material'
 
 repo_name: 'GitHub'
-repo_url: 'https://http://aepolicht.github.io/aepolicht'
+repo_url: 'https://aepolicht.github.io/aepolicht'
+
+pages:
+- Home: 'index.md'
+- Projects: 'projects.md'
+- About: 'about.md'
+# - OldSite: 'https://aepolicht.github.io/Projects/'
