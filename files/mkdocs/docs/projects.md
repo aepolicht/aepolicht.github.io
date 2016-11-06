@@ -1,5 +1,3 @@
-# Welcome to MkDocs
+[moboNet](./mobonet.md)
 
 ## Commands
-
-## Project layout

@@ -19,6 +19,14 @@
 
     
     <url>
+     <loc>/mobonet/</loc>
+     <lastmod>2016-11-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/about/</loc>
      <lastmod>2016-11-06</lastmod>
      <changefreq>daily</changefreq>
