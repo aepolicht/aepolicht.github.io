@@ -6,7 +6,6 @@ This goal of this project was to create an affordable and expandable home networ
 
 - - -
 ##Video
-![video]()
 <p align="center"><iframe width="640" height="360" src="//www.youtube.com/embed/LThQ7OVa-BA" frameborder="0" allowfullscreen></iframe></p>
 <small>
 
