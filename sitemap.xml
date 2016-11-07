@@ -10,19 +10,19 @@
     
 
     
-    <url>
-     <loc>/projects/</loc>
-     <lastmod>2016-11-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
+        
     <url>
      <loc>/mobonet/</loc>
      <lastmod>2016-11-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/android_continuum/</loc>
+     <lastmod>2016-11-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

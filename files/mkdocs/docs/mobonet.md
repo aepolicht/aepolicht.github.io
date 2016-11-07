@@ -7,9 +7,9 @@ This goal of this project was to create an affordable and expandable home networ
 
 - - -
 ##Video
-![video]()
-<p align="center"><iframe  style="overflow: hidden; height: 100%; width: 100%; position: absolute;" height="100%" width="100%" src="//www.youtube.com/embed/LThQ7OVa-BA" frameborder="0" allowfullscreen></iframe></p>
-<small>
+![ALT](www.youtube.com/embed/LThQ7OVa-BA)
+<!-- <p align="center"><iframe  style="overflow: hidden; height: 100%; width: 100%; position: absolute;" height="100%" width="100%" src="//www.youtube.com/embed/LThQ7OVa-BA" frameborder="0" allowfullscreen></iframe></p>
+<small> -->
 
 - - -
 ##Diagram

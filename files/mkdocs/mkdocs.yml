@@ -1,14 +1,15 @@
-site_name: aepolicht
+site_name: Aepolicht
 site_author: Alexander Policht
-site_description: Personal projects page.
+site_description: My personal website projects page.
 
 theme: 'material'
 
 # repo_name: 'GitHub'
-# repo_url: 'https://aepolicht.github.io'
+repo_url: 'https://aepolicht.github.io'
 
 pages:
 - Home: 'index.md'
-- Projects: 'projects.md'
-- MoboNet: 'mobonet.md'
-- About: 'about.md'
+- Projects:
+    - moboNet: mobonet.md
+    - Android Continuum: android_continuum.md
+- About Me: 'about.md'

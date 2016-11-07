@@ -1,5 +1,3 @@
-# Welcome to MkDocs
+# Welcome to my projects page!
 
-## Commands
-
-## Project layout
+Here you will find all the documentation and links to code, boards, and designs for projects i've worked on. 
