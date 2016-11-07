@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to my projects page!\n\n\nHere you will find all the documentation and links to code, boards, and designs for projects i've worked on.", 
+            "text": "Welcome to my projects page!\n\n\nHere you will find all the documentation and links to code, boards, and designs for projects i've worked on. \n\n\n\n\nNote\n\n\nThis website is still under development, projects may be missing related code and files but will be updated.", 
             "title": "Home"
         }, 
         {
             "location": "/#welcome-to-my-projects-page", 
-            "text": "Here you will find all the documentation and links to code, boards, and designs for projects i've worked on.", 
+            "text": "Here you will find all the documentation and links to code, boards, and designs for projects i've worked on.    Note  This website is still under development, projects may be missing related code and files but will be updated.", 
             "title": "Welcome to my projects page!"
         }, 
         {
