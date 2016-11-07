@@ -152,13 +152,13 @@
         }, 
         {
             "location": "/about/", 
-            "text": "About", 
+            "text": "About Me\n\n\ntest:", 
             "title": "About Me"
         }, 
         {
-            "location": "/about/#about", 
-            "text": "", 
-            "title": "About"
+            "location": "/about/#about-me", 
+            "text": "test:", 
+            "title": "About Me"
         }
     ]
 }
