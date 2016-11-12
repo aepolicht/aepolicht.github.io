@@ -315,8 +315,7 @@ In this GNURadio project file I demonstrate one way you can demodulate FM signal
 <p>In the GNURadio implementation below, I use an RTL-SDR as the reciever and use equation 2 from above to demodulate wide band FM broadcasts. GNURadio companion project file can be downloaded <a href="../file/FM_Receiver_Mono.zip">Here</a>.</p>
 <p><img alt="Screenshot" src="../img/FM_demod.PNG" /></p>
 <p>The spectrum allocation inside the FM broadcast contains a few main sections. In the image below we can see the baseband signal content from 30 Hz to 15030 Hz is the Left + Right audio information to allow comptability with mono receivers. In the current implemntation of this demodulator we are listening to this L+R mono signal. </p>
-<p><img alt="FM Broadcast Allocation" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/RDS_vs_DirectBand_FM-spectrum2.svg" /> 
-Courtesy of Wikipedia.</p>
+<p><img alt="FM Broadcast Allocation" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/RDS_vs_DirectBand_FM-spectrum2.svg" /> </p>
 <p>In the baseband spectrum plot below, we can see from 0 to around 20 kHz is our L+R spectrum and the 19 kHz pilot frequency clearly.</p>
 <p><img alt="Screenshot" src="../img/FM_Baseband.gif" /></p>
 <p>To implement stereo audio by utilizing the L-R after mixing down to baseband, the reconstruction is as follows:</p>
