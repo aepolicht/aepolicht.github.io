@@ -309,7 +309,7 @@ In this GNURadio project file I demonstrate one way you can demodulate FM signal
 <p>
 <script type="math/tex; mode=display"> (2) \quad \quad \Delta \omega[n] = \frac{I[n]Q[n-1]-Q[n]I[n-1]}{\Delta t (I[n]^2 + Q[n]^2)} </script>
 </p>
-<p>Ideally the denominator (which is the magnitude of the I/Q vector) should be a constant, but in the real world this is not always the case. In the image of a FM broadcast below we can see the the scheme provides an amplitude varying about 3 dB. </p>
+<p>Ideally the denominator (which is the magnitude of the I/Q vector) should be a constant, but in the real world this is not always the case. In the image of a FM broadcast below we can see the the scheme provides an amplitude varying about 6 dB. </p>
 <p><img alt="Screenshot" src="../img/FM_demod_constellation.gif" /></p>
 <h2 id="gnuradio">GNURadio</h2>
 <p>In the GNURadio implementation below, I use an RTL-SDR as the reciever and use equation 2 from above to demodulate wide band FM broadcasts. GNURadio companion project file can be downloaded <a href="../file/FM_Receiver_Mono.zip">Here</a>.</p>
