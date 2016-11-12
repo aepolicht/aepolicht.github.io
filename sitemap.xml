@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2016-11-06</lastmod>
+     <lastmod>2016-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,19 @@
         
     <url>
      <loc>/mobonet/</loc>
-     <lastmod>2016-11-06</lastmod>
+     <lastmod>2016-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/android_continuum/</loc>
-     <lastmod>2016-11-06</lastmod>
+     <lastmod>2016-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/fm_demod/</loc>
+     <lastmod>2016-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -28,7 +34,7 @@
     
     <url>
      <loc>/about/</loc>
-     <lastmod>2016-11-06</lastmod>
+     <lastmod>2016-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
