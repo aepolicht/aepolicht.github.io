@@ -275,16 +275,16 @@
 <p>This year, I was given A very simple choice of which off the shelf rocket and motor to use. Do i use a <strong>D6</strong> engine or a <strong>C12</strong> engine with my <strong>Nike-X-7259</strong>? I mean the choice was simple but not having much experience with hobby rockets and of course when you spend the many of your days modeling systems for engineering purposes, the answer can't be <em>that</em> easy...</p>
 <p>So I decided to start working on a very simple model of rocket dynamics to try to determine which of these engines will give the best performance. I needed a way to validate my intuition which told me that the larger motor crammed into the smaller rocket body (which it was not setup for) would be the way to go. The result of this pondering is the beginnings of a modeling tool in MATLAB to help me determine the overall trajectory for a given configuration. </p>
 <p>The simulation takes into account: Hull Weight, Hull Dimensions, Motor Thrust, Motor Burn Times, Motor Static Weight, Motor Fuel Weight, Motor Thrust. I'm beginning to work on integrating drag and other non-idealities which will probably happen sometime before next years event. Below is a simple comparison of the two configurations. I adjusted the displacement angle slightly off normal so that we can actually see how they might behave more easily. </p>
-<p align="center"><img src="img/sim_launch.gif" alt="Drawing" style="width: 600px;"/></p>
+<p align="center"><img src="../img/sim_launch.gif" alt="Drawing" style="width: 600px;"/></p>
 
 <p align="center"><i>See MATLAB section below for source</i></p>
 
 <p>Well that convinces me enough to go with the D6, showing that even with the higher static weight and shorter burn time, the D6 should provide a higher maximum altitude reached. The only other tricky bit was ensuring that the rocket maintained aerodynamic stability with that added weight in the back (since this rocket was designed to use the C12). To account for how that added clay might impact the results, i added 0.01 kg to the static weight in the Motor1 scenario. </p>
 <p>After a custom engine fitting and excellent paint job by my talented other half, we have a rocket! (Mine is the far left)</p>
-<p align="center"><img src="img/rocket_static.jpg" alt="Drawing" style="width: 400px;"/></p>
+<p align="center"><img src="../img/rocket_static.jpg" alt="Drawing" style="width: 400px;"/></p>
 
 <p>On at launch time it had already gotten pretty dark so I've pointed out which one is mine in the image below. It's also the last to leave the platform... So heavy...</p>
-<p align="center"><img src="img/circled_enhanced.png" alt="Drawing" style="width: 800px;"/></p>
+<p align="center"><img src="../img/circled_enhanced.png" alt="Drawing" style="width: 800px;"/></p>
 
 <p>Anyways, here is the launch. Unfortunately because it was so dark we lost track of it pretty much immediately, but it was found in the end. I'm hoping to eventually compare the launch in greater detail with the simulation but first must add at least some very basic wind effects, since a parachute deploys on descent. Another feature for next time!</p>
 <p align="center"><iframe width="450" height="800" src="https://www.youtube.com/embed/w6vY3uXMamo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
