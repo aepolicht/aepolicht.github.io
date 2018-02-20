@@ -167,7 +167,7 @@
   
 
 
-  <a href="https://aepolicht.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/aepolicht/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -176,7 +176,7 @@
       </div>
     
     <div class="md-source__repository">
-      Aepolicht
+      GitHub
     </div>
   </a>
 
@@ -216,7 +216,7 @@
   
 
 
-  <a href="https://aepolicht.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/aepolicht/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -225,7 +225,7 @@
       </div>
     
     <div class="md-source__repository">
-      Aepolicht
+      GitHub
     </div>
   </a>
 
@@ -454,6 +454,8 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/aepolicht/edit/master/docs/fm_demod.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="fm-demodulator-in-gnu-radio">FM Demodulator in GNU Radio</h1>
 <h2 id="description">Description</h2>
@@ -461,70 +463,100 @@
 In this GNURadio project file I demonstrate one way you can demodulate FM signal content using only the math and filter blocks. The end result is of course is implemented within the WBFM demodulation block, although i am not sure if they use the same method. </p>
 <h2 id="background">Background</h2>
 <p><a href="https://en.wikipedia.org/wiki/Frequency_modulation">Frequency Modulation</a> is a method of encoding a signal, such as an audio sample, to the instaneous frequency of sinusoid which has a some center/carrier frequency Fc The below image from Wikipedia does a good job of demonstrating what this looks like in the time domain and compares to <a href="https://en.wikipedia.org/wiki/Amplitude_modulation">AM Modulation</a>. </p>
-<p><img alt="FM_TD" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Amfm3-en-de.gif" /></p>
+<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Amfm3-en-de.gif" alt="Drawing"/></p>
+
 <p>The mathematical expression for a general input signal waveform I(t) with a maximum frequency deviation scalar of kf and center frequency fc is defined by:</p>
-<p>
+<div>
+<div class="MathJax_Preview"> Y(t) = A cos(2\pi f_ct + k_f\int_{-\infty}^{t}I(t')dt') </div>
 <script type="math/tex; mode=display"> Y(t) = A cos(2\pi f_ct + k_f\int_{-\infty}^{t}I(t')dt') </script>
-</p>
+</div>
 <p>Traditional methods of frequency demodulation can involve differentiation and envelope detection, but since we have directy I/Q samples from the RTL-SDR we can use a more elegant method which only requires basic elements. When we have two data streams of In-phase I(t) and Quadrature Q(t) data, the amplitude and phase components can be retreived as:</p>
-<p>
+<div>
+<div class="MathJax_Preview"> A(t) = 2 \sqrt{I(t)^2 + Q(t)^2} </div>
 <script type="math/tex; mode=display"> A(t) = 2 \sqrt{I(t)^2 + Q(t)^2} </script>
+</div>
+<div>
+<div class="MathJax_Preview"> \theta(t) = -tan^{-1}(\frac{Q(t)}{I(t)}) </div>
 <script type="math/tex; mode=display"> \theta(t) = -tan^{-1}(\frac{Q(t)}{I(t)}) </script>
-</p>
+</div>
 <p>In the case of our frequency modulated signal of interest Y(t) we are interested in how the phase/angle changes over time. Differentiating the theta(t) with respect to time we have:</p>
-<p>
+<div>
+<div class="MathJax_Preview"> (1) \quad \quad  \Delta \omega(t) = \frac{d\theta}{dt} = \frac{-1}{I^2+Q^2}(I \frac{dQ}{dt} - Q \frac{dI}{dt}) </div>
 <script type="math/tex; mode=display"> (1) \quad \quad  \Delta \omega(t) = \frac{d\theta}{dt} = \frac{-1}{I^2+Q^2}(I \frac{dQ}{dt} - Q \frac{dI}{dt}) </script>
-</p>
+</div>
 <p>Above is the continuous time representation of the instantaneous freuency component of the I/Q stream. Since we have descrete samples from our transciever approximate the elementwise derivative of dQ/dt as:</p>
-<p>
+<div>
+<div class="MathJax_Preview"> \frac{dQ}{dt} \Rightarrow \frac{Q[n] - Q[n-1]}{\Delta t} </div>
 <script type="math/tex; mode=display"> \frac{dQ}{dt} \Rightarrow \frac{Q[n] - Q[n-1]}{\Delta t} </script>
-</p>
+</div>
 <p>Allowing us to re-write the descrete version of equation 1 as:</p>
-<p>
+<div>
+<div class="MathJax_Preview"> \require{cancel} </div>
 <script type="math/tex; mode=display"> \require{cancel} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> \Delta \omega[n] = -\frac{I[n]\frac{Q[n] - Q[n-1]}{\Delta t} - Q[n]\frac{I[n] - I[n-1]}{\Delta t} }{I[n]^2 + Q[n]^2} </div>
 <script type="math/tex; mode=display"> \Delta \omega[n] = -\frac{I[n]\frac{Q[n] - Q[n-1]}{\Delta t} - Q[n]\frac{I[n] - I[n-1]}{\Delta t} }{I[n]^2 + Q[n]^2} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> \Delta \omega[n] = \frac{-\frac{1}{\Delta t}(I[n](Q[n] - Q[n-1]) - Q[n](I[n] - I[n-1]))}{I[n]^2 + Q[n]^2} </div>
 <script type="math/tex; mode=display"> \Delta \omega[n] = \frac{-\frac{1}{\Delta t}(I[n](Q[n] - Q[n-1]) - Q[n](I[n] - I[n-1]))}{I[n]^2 + Q[n]^2} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> \Delta \omega[n] = \frac{-\frac{1}{\Delta t}(\cancel{I[n]Q[n]} - I[n]Q[n-1] - \cancel{Q[n]I[n]} - Q[n]I[n-1])}{I[n]^2 + Q[n]^2} </div>
 <script type="math/tex; mode=display"> \Delta \omega[n] = \frac{-\frac{1}{\Delta t}(\cancel{I[n]Q[n]} - I[n]Q[n-1] - \cancel{Q[n]I[n]} - Q[n]I[n-1])}{I[n]^2 + Q[n]^2} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> \Delta \omega[n] = \frac{\frac{1}{\Delta t}(I[n]Q[n-1] + Q[n]I[n-1])}{I[n]^2 + Q[n]^2} </div>
 <script type="math/tex; mode=display"> \Delta \omega[n] = \frac{\frac{1}{\Delta t}(I[n]Q[n-1] + Q[n]I[n-1])}{I[n]^2 + Q[n]^2} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> (2) \quad \quad \Delta \omega[n] = \frac{I[n]Q[n-1]-Q[n]I[n-1]}{\Delta t (I[n]^2 + Q[n]^2)} </div>
 <script type="math/tex; mode=display"> (2) \quad \quad \Delta \omega[n] = \frac{I[n]Q[n-1]-Q[n]I[n-1]}{\Delta t (I[n]^2 + Q[n]^2)} </script>
-</p>
+</div>
 <p>Ideally the denominator (which is the magnitude of the I/Q vector) should be a constant, but in the real world this is not always the case. In the image of a FM broadcast below we can see the the scheme provides an amplitude varying about 3 dB. </p>
-<p><img alt="Screenshot" src="../img/FM_demod_constellation.gif" /></p>
+<p align="center"><img src="../img/FM_demod_constellation.gif" alt="Drawing"/></p>
+
 <h2 id="gnuradio">GNURadio</h2>
 <p>In the GNURadio implementation below, I use an RTL-SDR as the reciever and use equation 2 from above to demodulate wide band FM broadcasts. GNURadio companion project file can be downloaded <a href="../file/FM_Receiver_Mono.zip">Here</a>.</p>
-<p><img alt="Screenshot" src="../img/FM_demod.PNG" /></p>
+<p align="center"><img src="../img/FM_demod.PNG" alt="Drawing"/></p>
+
 <p>The spectrum allocation inside the FM broadcast contains a few main sections. In the image below we can see the baseband signal content from 30 Hz to 15030 Hz is the Left + Right audio information to allow comptability with mono receivers. In the current implemntation of this demodulator we are listening to this L+R mono signal. </p>
 <p><img alt="FM Broadcast Allocation" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/RDS_vs_DirectBand_FM-spectrum2.svg" /> </p>
 <p>In the baseband spectrum plot below, we can see from 0 to around 20 kHz is our L+R spectrum and the 19 kHz pilot frequency clearly.</p>
-<p><img alt="Screenshot" src="../img/FM_Baseband.gif" /></p>
+<p align="center"><img src="../img/FM_Baseband.gif" alt="Drawing"/></p>
+
 <p>To implement stereo audio by utilizing the L-R after mixing down to baseband, the reconstruction is as follows:</p>
-<p>
+<div>
+<div class="MathJax_Preview"> Audio_{mono} = Audio_{left} + Audio_{right} </div>
 <script type="math/tex; mode=display"> Audio_{mono} = Audio_{left} + Audio_{right} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> Audio_{sub} = Audio_{left} - Audio_{right} </div>
 <script type="math/tex; mode=display"> Audio_{sub} = Audio_{left} - Audio_{right} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> (3) \quad \quad Audio_{left} = \frac{Audio_{mono}+ Audio_{sub}}{2} </div>
 <script type="math/tex; mode=display"> (3) \quad \quad Audio_{left} = \frac{Audio_{mono}+ Audio_{sub}}{2} </script>
-</p>
-<p>
+</div>
+<div>
+<div class="MathJax_Preview"> (4) \quad \quad Audio_{left} = \frac{Audio_{mono}- Audio_{sub}}{2} </div>
 <script type="math/tex; mode=display"> (4) \quad \quad Audio_{left} = \frac{Audio_{mono}- Audio_{sub}}{2} </script>
-</p>
+</div>
 <p>Below is a capture of the full GNURadio Gui.</p>
 <p><img alt="Screenshot" src="../img/FM_demod_window.gif" /></p>
 <h2 id="references">References</h2>
-<p>[1] S. Franke, “Wireless Communication Systems” University of Illinois at Urbana-Champaign.</p>
-<p>[2] GNURadio, "GNU Radio Manual and C++ API Reference" <a href="http://gnuradio.org/doc/doxygen/">http://gnuradio.org/doc/doxygen/</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>S. Franke, “Wireless Communication Systems” University of Illinois at Urbana-Champaign.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>GNURadio, "GNU Radio Manual and C++ API Reference" <a href="http://gnuradio.org/doc/doxygen/">http://gnuradio.org/doc/doxygen/</a>.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                 
@@ -587,6 +619,16 @@ In this GNURadio project file I demonstrate one way you can demodulate FM signal
       </div>
       
         
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/aepolicht" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.linkedin.com/in/aepolicht/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
       
     </div>
   </div>

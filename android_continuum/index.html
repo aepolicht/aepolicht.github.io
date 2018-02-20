@@ -167,7 +167,7 @@
   
 
 
-  <a href="https://aepolicht.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/aepolicht/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -176,7 +176,7 @@
       </div>
     
     <div class="md-source__repository">
-      Aepolicht
+      GitHub
     </div>
   </a>
 
@@ -216,7 +216,7 @@
   
 
 
-  <a href="https://aepolicht.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/aepolicht/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -225,7 +225,7 @@
       </div>
     
     <div class="md-source__repository">
-      Aepolicht
+      GitHub
     </div>
   </a>
 
@@ -490,6 +490,8 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/aepolicht/edit/master/docs/android_continuum.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                   <h1>Android Continuum</h1>
                 
@@ -505,14 +507,16 @@
 <p><img alt="Screenshot" src="../img/Preprocessing.png" /></p>
 <p>The waveform module in Figure 3 contains the necessary components for wavetable synthesis. It receives the X and Z axes data from the screen to control the frequency and amplitude, respectively. After the frequency and amplitude have been specified, they are fed into the wavetable. The wavetable houses the different waveforms. [3] We implemented the Lent algorithm for pitch shifting the waveforms. In the Lent algorithm, pitch shifting is achieved by varying the period of the sound, thus altering the pitch. Lowering the pitch is achieved by increasing the period through zero-padding. Higher pitches require a shorter period. In this case, waveforms are overlapped and added to preserve the original sound and still shift the pitch. The waveform module also receives the recorded sound and corresponding pitch and stores it in the wavetable.</p>
 <p>[3] According to the Lent Algorithm, the ratio between the fundamental frequency and the target frequency is used to determine the change in period.</p>
-<p>
+<div>
+<div class="MathJax_Preview"> \frac{T_{fundamental}}{T_{target}} = \frac{f_{target}}{f_{fundamental}}</div>
 <script type="math/tex; mode=display"> \frac{T_{fundamental}}{T_{target}} = \frac{f_{target}}{f_{fundamental}}</script>
-</p>
+</div>
 <p><img alt="Screenshot" src="../img/Waveform.png" /></p>
 <p>Karplus-Strong is the final element of the project. It is controlled by the Y axis, and applies the Karplus-Strong effect to the sound if is toggled on. The equation for Karplus-Strong is shown below, where coefficient a is determined by the Y axis and filters the output sound. </p>
-<p>
+<div>
+<div class="MathJax_Preview">x(n) = x(n) + a[\frac{x(n-1) + x(n-2)}{2}] \quad where \quad a &lt; 1</div>
 <script type="math/tex; mode=display">x(n) = x(n) + a[\frac{x(n-1) + x(n-2)}{2}] \quad where \quad a < 1</script>
-</p>
+</div>
 <p>The value of coefficient a increases at the bottom of the screen, effectively creating a longer sustain. As the user slides up the Y axis, the filtering strengthens and reduces the sustain effect. </p>
 <p><img alt="Screenshot" src="../img/Karplus-Strong.png" /></p>
 <h2 id="results">Results</h2>
@@ -536,10 +540,23 @@ Lastly, additional features and effects can be added to the synthesizer. There i
 <p>The other three files of interest are the synthesis classes. The first is the wave table synthesis file which is a class called WaveSynth.java. It has three modes which return appropriately sized buffers of sin, sawtooth, or square wave. The second, which is a class called SampleSynth.java, is the class for using sample based synthesis. It currently has five pre-programmed instruments which need to be declared upon construction. The last is the user input sample based synthesis class which is called userSynth.java. The user synth is essentially the same as the sample synth except that It gets its samples from recording microphone input. </p>
 <p>For more information about the specific methods and operation of the files and classes mentioned above, the source for these files is available in the appendices at the end of the report.</p>
 <h2 id="citations">Citations</h2>
-<p>[1] L. Haken, “Haken Audio Continuum Fingerboard,” [Online]. Available: http://www.hakenaudio.com/Continuum/ [Accessed: 11 March 2014].</p>
-<p>[2] K. Karplus and A. Strong, “Digital Synthesis of Plucked-String and Drum Timbres,” Computer Music Journal, vol. 7, no. 2, Summer 1983, pp 43-55. [Online]. Available: JSTOR, http://www.jstor.org/stable/3680062 [Accessed: 11 March 2014]. </p>
-<p>[3] K. Lent, “An Efficient Method for Pitch Shifting Digitally Sampled Sounds,” Computer Music Journal, vol. 13, no. 4, Winter 1989, pp. 65-71. [Online]. Available: JSTOR, http://www.jstor.org/stable/3679554 [Accessed: 13 April 2014].</p>
-<p>[4] Patricio de la Cuadra, PITCH DETECTION METHODS REVIEW, [Online]. Available: https://ccrma.stanford.edu/~pdelac/154/m154paper.htm [Accessed: 11 March 2014].</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>L. Haken, “Haken Audio Continuum Fingerboard,” [Online]. Available: <a href="http://www.hakenaudio.com/Continuum/">http://www.hakenaudio.com/Continuum/</a> [Accessed: 11 March 2014].&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>K. Karplus and A. Strong, “Digital Synthesis of Plucked-String and Drum Timbres,” Computer Music Journal, vol. 7, no. 2, Summer 1983, pp 43-55. [Online]. Available: JSTOR, <a href="http://www.jstor.org/stable/3680062">http://www.jstor.org/stable/3680062</a> [Accessed: 11 March 2014].&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>K. Lent, “An Efficient Method for Pitch Shifting Digitally Sampled Sounds,” Computer Music Journal, vol. 13, no. 4, Winter 1989, pp. 65-71. [Online]. Available: JSTOR, <a href="http://www.jstor.org/stable/3679554">http://www.jstor.org/stable/3679554</a> [Accessed: 13 April 2014].&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Patricio de la Cuadra, PITCH DETECTION METHODS REVIEW, [Online]. Available: <a href="https://ccrma.stanford.edu/~pdelac/154/m154paper.htm">https://ccrma.stanford.edu/~pdelac/154/m154paper.htm</a> [Accessed: 11 March 2014].&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                 
@@ -602,6 +619,16 @@ Lastly, additional features and effects can be added to the synthesizer. There i
       </div>
       
         
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/aepolicht" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.linkedin.com/in/aepolicht/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
       
     </div>
   </div>

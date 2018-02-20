@@ -167,7 +167,7 @@
   
 
 
-  <a href="https://aepolicht.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/aepolicht/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -176,7 +176,7 @@
       </div>
     
     <div class="md-source__repository">
-      Aepolicht
+      GitHub
     </div>
   </a>
 
@@ -216,7 +216,7 @@
   
 
 
-  <a href="https://aepolicht.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/aepolicht/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -225,7 +225,7 @@
       </div>
     
     <div class="md-source__repository">
-      Aepolicht
+      GitHub
     </div>
   </a>
 
@@ -676,6 +676,8 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/aepolicht/edit/master/docs/mobonet.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="mobonet-a-home-automation-experiment">moboNet: A Home Automation Experiment</h1>
 <h2 id="description">Description</h2>
@@ -735,7 +737,7 @@
 
 <p>Here are the stages of the analog frequency response. It is generated from the circuit model in PSpice by performing an AC frequency sweep from 1Hz to 1MHz.</p>
 <h3 id="digital-sampling-and-filtering">Digital Sampling and Filtering</h3>
-<p>After the signal is amplified and filtered, it is then sampled at 20Khz. Further processing is then done through digital filtering. I am using a 30th order FIR filter. This method doesn't provide continuous digital signal but rather a burst of 31 samples every time the audio processing loop is entered. I have found that with the limited processing speed of the ATMEGA328, it is best to sample in this method rather than is interrupt based. Currently there are only two channels, 0-150Hz and 1KHz-10KHz. I hope to push this to more resolution in the future so i can design a music algorithm with more complexity while still staying within a 60Hz loop frequency. When the computations begin to take longer than ~20mS there becomes noticeable jitter. I may yet be able to compensate for this if i need to when adding more channels.</p>
+<p>After the signal is amplified and filtered, it is then sampled at 20Khz. Further processing is then done through digital filtering. I am using a 30<sup>th</sup> order FIR filter. This method doesn't provide continuous digital signal but rather a burst of 31 samples every time the audio processing loop is entered. I have found that with the limited processing speed of the ATMEGA328, it is best to sample in this method rather than is interrupt based. Currently there are only two channels, 0-150Hz and 1KHz-10KHz. I hope to push this to more resolution in the future so i can design a music algorithm with more complexity while still staying within a 60Hz loop frequency. When the computations begin to take longer than ~20mS there becomes noticeable jitter. I may yet be able to compensate for this if i need to when adding more channels.</p>
 <!-- - - -
 ###Next on the List
 
@@ -807,6 +809,16 @@
       </div>
       
         
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/aepolicht" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.linkedin.com/in/aepolicht/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
       
     </div>
   </div>
